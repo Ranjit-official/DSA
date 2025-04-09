@@ -1,0 +1,4 @@
+we should avoid searching in neighbours like num[i] and num[i+1]
+because they can be in any position so we have to go through every possible
+To avoid:
+- overlapping (we cant repeat same index twice)
