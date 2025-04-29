@@ -16,32 +16,30 @@ public:
 int main()
 {
     int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
-    Node *HEAD;
-    HEAD = NULL;
+    Node *Head;
+    Node *Tail = Head = NULL;
     for (int i = 0; i < 8; i++)
     {
-        if (HEAD == NULL)
+        if (Head == NULL)
         {
 
-            HEAD = new Node(arr[i]);
+            Head = new Node(arr[i]);
+            Tail = Head;
         }
         else
         {
-            Node *temp = new Node(arr[i]);
-            temp->next = HEAD;
-            HEAD = temp;
+Tail->next = new Node(arr[i]);
+Tail = Tail->next;
         }
     }
-    Node *temp = HEAD;
+
+    Node *temp;
+    temp= Head;
     while (temp->next != NULL)
     {
+        cout << temp->data << " ";
         temp = temp->next;
     }
-    temp->next = new Node(30);
-    while (HEAD != NULL)
-    {
-        cout << HEAD->data << " ";
-        HEAD = HEAD->next;
-    }
+
     return 0;
 }
